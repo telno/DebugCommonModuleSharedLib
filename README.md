@@ -1,5 +1,17 @@
 # Debugging for issue with shared Angular library
 
+## Update: this issue was resolved by:
+- adding "preserveSymlinks: true" to the package.json like so:
+```
+"build": {
+   "builder": "@angular-builders/custom-webpack:browser",
+   "options": {
+       "preserveSymlinks": true
+   }
+}
+```
+- using yarn/npm link command instead of adding dependency in package.json via file://...
+- deleting the module cache under ~/.angular/cache
 
 ## This repro project was constructed following these steps:
 
